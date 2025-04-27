@@ -33,7 +33,19 @@ export default function Calculator() {
         setError('请输入有效的数字');
         return;
       }
-      
+      if(operator === '/') {
+        if(num2 === 0) {
+          setError('除数不能为0');
+          return;
+        }
+        setResult(num1 / num2);
+      }else if(operator === '*'){
+        setResult(num1 * num2);
+      }else if(operator === '-'){
+        setResult(num1 - num2);
+      }else if(operator === '+'){
+        setResult(num1 + num2);
+      }
       // // 调用RPC方法
       // const response = await client.calculate({
       //   firstNumber: num1,
